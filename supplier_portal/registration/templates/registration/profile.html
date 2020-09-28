@@ -1,0 +1,51 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="main-w3layouts wrapper">
+  <h1>Profile</h1>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+      <form action="#" method="post">
+        {% csrf_token %}
+
+        {% if error %}
+        <p>{{ error }} : <b> {{ obj.p_s_email }} </b> </p>
+        {% endif %}
+
+        Supplier Business Name <input class="text" type="text" name="p_s_b_name" value="{{ obj.p_sup_bus_name }}"
+          readonly="true">
+
+        Supplier Full Name <input class="text" type="text" name="p_s_f_name" value="{{ obj.p_sup_full_name }}"
+          placeholder="Supplier Full Name" readonly="true">
+
+        Supplier Email <input class="text email" type="email" name="p_s_email" value="{{ obj.p_sup_email }}"
+          readonly="true">
+
+        Supplier Phone <input class="text" type="text" name="p_s_phone" value="{{ obj.p_sup_phone }}" readonly="true">
+
+        Secondary Supplier Business Name <input class="text" type="text" name="s_s_b_name"
+          value="{{ obj.s_sup_bus_name }}">
+
+        Secondary Supplier Full Name <input class="text" type="text" name="s_s_f_name"
+          value="{{ obj.s_sup_full_name }}">
+
+        Secondary Supplier Email <input class="text email" type="email" name="s_s_email" value="{{ obj.s_sup_email }}">
+
+        Secondary Supplier Phone <input class="text" type="tel" name="s_s_phone" value="{{ obj.s_sup_phone }}" maxlength="10" pattern="[0-9]{10}">
+
+        Address <input class="text" type="text" name="address" value="{{ obj.address }}">
+
+        City <input class="text" type="text" name="city" value="{{ obj.city }}">
+
+        Postal Code <input class="text" type="text" name="postal_code" value="{{ obj.postal_code }}" maxlength="6">
+
+        Country <input class="text" type="text" name="country" value="{{ obj.country }}">
+
+        <input name="profile_btn" type="submit" value="Update Profile">
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

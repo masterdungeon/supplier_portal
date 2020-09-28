@@ -1,0 +1,26 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="main-w3layouts wrapper">
+  <h1>Profile</h1>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+      <form action="#" method="post">
+        {% csrf_token %}
+
+        <p> Use Supplier Email</p>
+
+        {% if error %}
+        <p>{{ error }} : <b> {{ email }} </b> </p>
+        {% endif %}
+
+        <input class="text" type="email" name="email" placeholder="Email: name@example.com" required="" value="{{ email }}">
+
+        <input name="get_profile_btn" type="submit" value="Get Profile">
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

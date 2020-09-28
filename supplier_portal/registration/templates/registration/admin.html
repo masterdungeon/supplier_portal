@@ -1,0 +1,70 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{%block content%}
+
+<div class="main-w3layouts wrapper">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <table id="suppliers_list" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Supplier Business Name</th>
+            <th>Supplier Full Name</th>
+            <th>Supplier Email</th>
+            <th>Supplier Phone</th>
+            <th>Supplier Secondary Business Name</th>
+            <th>Supplier Secondary Full Name</th>
+            <th>Supplier Secondary Email</th>
+            <th>Supplier Secondary Phone</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for q in Suppliers %}
+          <tr>
+            <td>{{q.p_sup_bus_name}}</td>
+            <td>{{q.p_sup_full_name}}</td>
+            <td>{{q.p_sup_email}}</td>
+            <td>{{q.p_sup_phone}}</td>
+            <td>{{q.s_sup_bus_name}}</td>
+            <td>{{q.s_sup_full_name}}</td>
+            <td>{{q.s_sup_email}}</td>
+            <td>{{q.s_sup_phone}}</td>
+            <td>{{q.address}}</td>
+            <td>{{q.city}}</td>
+            <td>{{q.postal_code}}</td>
+            <td>{{q.country}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#suppliers_list').DataTable();
+    });
+  </script>
+  <style>
+    body {
+      background: #fff;
+      background: -webkit-linear-gradient(to top, #fff, #fff);
+      background: -moz-linear-gradient(to top, #fff, #fff);
+      background: -o-linear-gradient(to top, #fff, #fff);
+      background: linear-gradient(to top, #fff, #fff);
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Roboto', sans-serif;
+  }
+  </style>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'registration/base.html' %}
+{%block content%}
+
+<div class="main-w3layouts wrapper">
+  <h1>Supplier Registration</h1>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+      <form action="#" method="post">
+        {% csrf_token %}
+
+        {% if error %}
+          <p>{{ error }} : <b> {{ p_email }} </b> </p>
+        {% endif %}
+
+        <input class="text" type="text" name="p_s_b_name" placeholder="Supplier Business Name" required="">
+
+        <input class="text" type="text" name="p_s_f_name" placeholder="Supplier Full Name" required="">
+
+        <input class="text email" type="email" name="p_s_email" placeholder="Supplier Email : name@example.com  (This email will be used in Profile login)"
+          required="" value="{{ p_email }}">
+
+        <input class="text" type="tel" name="p_s_phone" placeholder="Supplier Phone : 9997370226" required="" maxlength="10" pattern="[0-9]{10}">
+
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+*.py[cod]
+.*
+!.github
+!.gitignore
+!.pylintrc
+!.testcafe
+*.pot
+*.pyc
+__pycache__/
+build/
+coverage/
+dist/
+*\.egg*
+# data
+/media/
+/node_modules/
