@@ -5,18 +5,15 @@ This is a simple supplier portal in which supplier can register and update
 their basic details and admin can see all the registations.
 
 ## Supplier Registration
----------------------
 
 User have to fill basic details to register, and email that is used while
 registation can be used to updating profile.
 
 ## Profile Update
----------------
 
 User can update and add some other details.
 
 ## Custom Admin Page
------------------
 
 Admin can view all registation with search and sort option.
 
