@@ -1,1 +1,1 @@
-web: gunicorn supplier_portal.wsgi --log-file -
+web: gunicorn --pythonpath supplier_portal supplier_portal.wsgi --log-file -
