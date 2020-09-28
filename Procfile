@@ -1,1 +1,1 @@
-web: gunicorn supplier_portal.wsgi
+web: gunicorn supplier_portal supplier_portal.wsgi
